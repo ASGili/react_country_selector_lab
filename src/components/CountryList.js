@@ -1,19 +1,17 @@
 import React from 'react';
+import CountrySelect from './CountrySelect';
+import RegionSelect from './RegionSelect';
+import ResetButton from './ResetButton';
 
+const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionSelected,handleReset}) => {
 
-const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionSelected}) => {
-
-    const countryOptions = countriesByRegion.map((country, index) => {
-      return <option key={index} value={index}>{country.name.common} {country.flag}</option>
-    })
 
     const regionMap = countries.map((country)=> {
       return country.region})
 
     const regionList = [... new Set(regionMap)];
     
-    const regionOptions = regionList.map((region)=>{return <option>{region}</option>});
-
+    
     const handleCountrySelect = function(event) {
       const countryIndex = event.target.value
       const filteredCountries = countriesByRegion.filter((country) => {
@@ -30,15 +28,11 @@ const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionS
 
   return ( 
     <section className="main-container">
-      <select onChange={handleRegionSelect}>
-      <option selected disabled>All Continents</option>
-      {regionOptions}
-      </select>
-      <select onChange={handleCountrySelect}>
-        {countryOptions}
-      </select>
+      <RegionSelect handleRegionSelect={handleRegionSelect} regionList={regionList}/>
+      <CountrySelect countries={countries} countriesByRegion={countriesByRegion} onRegionSelected={onRegionSelected} handleCountrySelect={handleCountrySelect}/>
+      <ResetButton handleReset={handleReset}/>
    </section>
   )
-}
+};
 
 export default CountryList;

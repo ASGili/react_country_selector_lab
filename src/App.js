@@ -1,4 +1,5 @@
 import React from 'react';
+import './containers/CountriesContainer.css';
 import CountriesContainer from './containers/CountriesContainer';
 
 function App() {
