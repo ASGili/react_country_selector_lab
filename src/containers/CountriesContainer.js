@@ -18,10 +18,10 @@ const CountryContainer = () => {
         .then(res => res.json())
         .then(countries => setCountries(countries))
     }
-     let countriesByRegion
+    
+    let countriesByRegion = countries
 
-     if (selectedRegion) {countriesByRegion = countries.filter((country)=> {return country.region === selectedRegion})}
-     else {countriesByRegion = countries}
+    if (selectedRegion) {countriesByRegion = countries.filter((country)=> {return country.region === selectedRegion})}
 
     const onCountrySelected = function(country) {
         // const newSelectedCountry = countries[index]

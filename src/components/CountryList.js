@@ -4,7 +4,7 @@ import React from 'react';
 const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionSelected}) => {
 
     const countryOptions = countriesByRegion.map((country, index) => {
-      return <option key={index} value={index}>{country.name.common}</option>
+      return <option key={index} value={index}>{country.name.common} {country.flag}</option>
     })
 
     const regionMap = countries.map((country)=> {
@@ -31,7 +31,7 @@ const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionS
   return ( 
     <section className="main-container">
       <select onChange={handleRegionSelect}>
-      <option selected disabled>All Regions</option>
+      <option selected disabled>All Continents</option>
       {regionOptions}
       </select>
       <select onChange={handleCountrySelect}>
