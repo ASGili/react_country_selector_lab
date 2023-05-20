@@ -7,7 +7,7 @@ const CountrySelect = ({countries, countriesByRegion, handleCountrySelect})=>{
 
     return (
         <select onChange={handleCountrySelect}>
-        <option selected disabled>Choose a Country:</option>
+        <option id="default" reset selected disabled>Choose a Country:</option>
           {countryOptions}
         </select>
     )

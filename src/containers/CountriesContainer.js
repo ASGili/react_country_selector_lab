@@ -8,6 +8,7 @@ const CountryContainer = () => {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [selectedRegion, setSelectedRegion] = useState("");
 
+
     useEffect(() => {
       getCountries();
     }, [])
@@ -33,6 +34,8 @@ const CountryContainer = () => {
     const handleReset = function(){
         setSelectedRegion("")
         setSelectedCountry(null)
+        document.getElementById("default").selected = "true"
+        document.getElementById("default2").selected = "true"
     };
     return (
         <section>

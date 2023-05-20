@@ -4,7 +4,7 @@ const RegionSelect = ({handleRegionSelect, regionList})=>{
 
     return (
     <select onChange={handleRegionSelect}>
-    <option selected disabled>Choose a continent to filter: </option>
+    <option id="default2" selected disabled>Choose a continent to filter: </option>
       {regionOptions}
     </select>
     )
