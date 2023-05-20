@@ -1,5 +1,3 @@
-// import './CountryDetail.css';
-
 const CountryDetail = ({country}) => {
 
     return (

@@ -6,6 +6,7 @@ import './CountriesContainer.css';
 const CountryContainer = () => {
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null);
+    const [selectedRegion, setSelectedRegion] = useState("");
 
     // Use effect ensures that we only pull the data from the API when we don't have the data already. We pass the empty array as a dependency to run.
     useEffect(() => {
@@ -17,20 +18,27 @@ const CountryContainer = () => {
         .then(res => res.json())
         .then(countries => setCountries(countries))
     }
+     let countriesByRegion
 
-    // On X Functions
+     if (selectedRegion) {countriesByRegion = countries.filter((country)=> {return country.region === selectedRegion})}
+     else {countriesByRegion = countries}
+
     const onCountrySelected = function(country) {
         // const newSelectedCountry = countries[index]
         setSelectedCountry(country)
     }
 
+    const onRegionSelected = function(region) {
+        setSelectedRegion(region)
+    }
+
     // Amend the above to get the object out of the array here
 
     return (
-        <div className="main-container">
-            <CountryList countries={countries} onCountrySelected={onCountrySelected} selectedCountry={selectedCountry} />
+        <section>
+            <CountryList countries={countries} countriesByRegion={countriesByRegion} onCountrySelected={onCountrySelected} onRegionSelected={onRegionSelected} selectedCountry={selectedCountry} />
             {selectedCountry ? <CountryDetail country={selectedCountry}/> : null}
-        </div>
+        </section>
     )
 }
 
