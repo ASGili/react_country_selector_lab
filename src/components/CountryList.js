@@ -7,11 +7,11 @@ const CountryList = ({countries, countriesByRegion, onCountrySelected, onRegionS
 
 
     const regionMap = countries.map((country)=> {
-      return country.region})
+      return country.continents[0]})
 
     const regionList = [... new Set(regionMap)];
     
-    
+    console.log(regionList)
     const handleCountrySelect = function(event) {
       const countryIndex = event.target.value
       const filteredCountries = countriesByRegion.filter((country) => {

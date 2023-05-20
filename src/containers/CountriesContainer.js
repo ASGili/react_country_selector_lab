@@ -21,7 +21,7 @@ const CountryContainer = () => {
     
     let countriesByRegion = countries
 
-    if (selectedRegion) {countriesByRegion = countries.filter((country)=> {return country.region === selectedRegion})}
+    if (selectedRegion) {countriesByRegion = countries.filter((country)=> {return country.continents[0] === selectedRegion})}
 
     const onCountrySelected = function(country) {
         setSelectedCountry(country)
