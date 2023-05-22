@@ -1,9 +1,20 @@
+body {
+  background-color: peru;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
   }
 
+  .country-detail {
+    font-size: larger;
+    background-color: antiquewhite;
+    width: 40%;
+    margin: 25px;
+    padding: 10px;
+  }
 select {
   width: 30%;
   height: 10%;

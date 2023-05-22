@@ -1,3 +1,5 @@
+import '../containers/CountriesContainer.css';
+
 const CountryDetail = ({country}) => {
 
     return (
