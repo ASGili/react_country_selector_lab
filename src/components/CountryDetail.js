@@ -18,7 +18,7 @@ const CountryDetail = ({country}) => {
         <br/>
         Population: {country.population}.
         <br/>
-      <MapContainer style={{ height: 400, width: 400 }} center={center} zoom={7} scrollWheelZoom={false}>
+      <MapContainer style={{ height: 400, width: 400 }} center={center} zoom={6} scrollWheelZoom={false}>
       <MapChange />
       <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
       </MapContainer>
