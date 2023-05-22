@@ -8,13 +8,14 @@ body {
     align-items: center;
   }
 
-  .country-detail {
+.country-detail {
     font-size: larger;
     background-color: antiquewhite;
     width: 40%;
     margin: 25px;
     padding: 10px;
-  }
+}
+
 select {
   width: 30%;
   height: 10%;
@@ -37,3 +38,4 @@ hr {
 h1 {
   margin-left: 20px;
 }
+

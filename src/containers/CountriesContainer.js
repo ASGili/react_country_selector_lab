@@ -25,6 +25,7 @@ const CountryContainer = () => {
 
     const onCountrySelected = function(country) {
         setSelectedCountry(country)
+        document.getElementById("default2").selected = "true"
     };
 
     const onRegionSelected = function(region) {
