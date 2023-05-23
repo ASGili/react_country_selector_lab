@@ -9,7 +9,7 @@ const CountryDetail = ({country}) => {
 
     const MapChange = ()=>{
       const map = useMap()
-      map.setView(center)
+      map.setView(center,6)
     }
     return (
       <section>
